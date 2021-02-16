@@ -7,16 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-String msg=request.getParameter("msg");
-if(msg!=null)
-{
-%>
-<%=msg%>
-<%
-}
-%>
-welcome to first page..
 <form action="./LoginServlet" method="post">
 Enter Name:<input type="text" name="name"><br>
 Enter password:<input type="password" name="pwd"/><br>

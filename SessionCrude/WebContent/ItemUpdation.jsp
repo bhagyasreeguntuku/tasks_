@@ -12,7 +12,7 @@
 <form method="post" action="./ItemUpdation">
 Enter Itemid:<input type="text" name="ItemId"/><br> 
 Enter Item name:<input type="text" name="ItemName"/><br> 
-Enter Item price:<input type="text" name="ItemPrice"/><br> 
+<!--  Enter Item price:<input type="text" name="ItemPrice"/><br> -->
 <input type="submit"/>
  
 
