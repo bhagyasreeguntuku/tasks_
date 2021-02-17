@@ -9,6 +9,6 @@
 <body>
 hi welcome<a href="ItemRegistration.jsp">Add Item</a><br>
 hi update me<a href="ItemUpdation.jsp">Update Item</a><br>
-hi delete me<a href="ItemDeletion.jsp">Delete Item</a><br>
+hi delete me<a href="./ItemDeletion">Delete Item</a><br>
 </body>
 </html>

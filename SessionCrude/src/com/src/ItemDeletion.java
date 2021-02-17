@@ -42,24 +42,29 @@ public class ItemDeletion extends HttpServlet {
 				
 		
 		DbConnection db=new DbConnection();
-		String sql="Delete from item where ItemId=?";
+		//String sql="Delete from item where ItemId=?";
+		String sql = "DELETE FROM  item  WHERE  ItemId=?";
 		PreparedStatement ps=db.getMyPreparedStatement(sql);
 		try {
-			ps.setString(1,user);
-			ps.setString(2,ItemId);
+			//ps.setString(1,user);
+			ps.setString(1,ItemId);
 			//ps.setString(3,ItemName);
 			//ps.setString(4,ItemPrice);
+		      //String sql = "DELETE FROM "+  " WHERE " + item + " = '" +  + "'";
+			
 			
 			int i=ps.executeUpdate();
 			
-			
+			//Cookie ck1=new Cookie("user","");
+			//ck1.setMaxAge(0);
+			//response.addCookie(ck1);
 			if(i>0)
 			{
 				response.sendRedirect("profile.jsp");
 			}
 			else
 			{
-				response.sendRedirect("ItemRegistration.jsp");
+				response.sendRedirect("ItemDeletion.jsp");
 			}
 		} catch (SQLException e) {
 

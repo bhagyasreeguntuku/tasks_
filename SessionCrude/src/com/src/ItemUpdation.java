@@ -36,31 +36,44 @@ public class ItemUpdation extends HttpServlet {
 		Cookie ck[]=request.getCookies();
 		ck[0].getValue();
 		String user=ck[0].getValue();
+		
 		String ItemId=request.getParameter("ItemId");
 		String ItemName=request.getParameter("ItemName");
-		String ItemPrice=request.getParameter("ItemPrice");
+		
 		
 				
 		
 		DbConnection db=new DbConnection();
-		String sql="Update item set"+"ItemName=?, ItemPrice=? where ItemId=?";
+		
+		//String sql="Update item set itemname='?' where itemid='?'";
+		//String sql="Update item set itemname='fan' where itemid='i9'";
+		
+		//String sql="UPDATE item SET ItemName='"+ItemName+"' WHERE ItemId='"+ItemId+"' ";
+		String sql = "UPDATE item "
+                + "SET ItemId = ? "
+                + "WHERE ItemName = ?";
+		
 		PreparedStatement ps=db.getMyPreparedStatement(sql);
 		try {
-			ps.setString(1,user);
-			ps.setString(2,ItemId);
-			ps.setString(3,ItemName);
-			ps.setString(4,ItemPrice);
+			//ps.setString(1,user);
+		
+			ps.setString(1,ItemId);
+			ps.setString(2,ItemName);
+			//ps.setString(4,ItemPrice);
 			
 			int i=ps.executeUpdate();
 			
-			
+			//Cookie ck1=new Cookie("user","");
+			//ck1.setMaxAge(0);
+			//response.addCookie(ck1);
 			if(i>0)
 			{
 				response.sendRedirect("profile.jsp");
+				
 			}
 			else
 			{
-				response.sendRedirect("ItemRegistration.jsp");
+				response.sendRedirect("ItemUpdation.jsp");
 			}
 		} catch (SQLException e) {
 
