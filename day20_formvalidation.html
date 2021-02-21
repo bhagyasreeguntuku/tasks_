@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	.myclass{
+		color: blue;
+		 width:100%;
+		  height:"80%";
+		  cellspacing:"0px";
+	}
+	.fd{
+		text-align:right;
+	}
+	#id1{
+		color:red;
+	}
+	tr{
+		background: #cccccc;
+	}
+</style>
+	</head>
+	<body onload="document.registration.indianmission.focus();">
+	<script>
+	function select_mission(im)
+	{
+		if(im.value == "Default")
+	{
+	window.alert('Select your mission from the list');
+	im.focus();
+	return false;
+	}
+	else
+	{
+	return true;
+	}
+	}
+	function select_service(ds){
+		if(ds.value == "Default")
+		{
+			alert('select your desired service');
+			ds.focus();
+			return false;
+		}
+		else{
+			return true;
+		}
+
+	}
+	function select_date(date1){
+		if(date1.value=='Default')
+		{
+			alert('select a date');
+			dob1.focus();
+			return false;
+		}
+		else{
+			return true;
+		}
+	}	
+	function allLetters(name)
+	{ 
+	var letters = /^[A-Za-z]+$/;
+	if(name.value.match(letters))
+	{
+	return true;
+	}
+	else
+	{
+	alert('name must have alphabet characters only');
+	name.focus();
+	return false;
+	}
+	}
+	function allNumeric(number)
+	{
+		var numbers = /^[0-9]+$/;
+	if(number.value.match(numbers))
+	{
+	return true;
+	}
+	else
+	{
+	alert('Numberic must have numeric characters only');
+	number.focus();
+	return false;
+
+	}
+	function isalphaNumeric(numberletter)
+	{
+		var letters = /^[0-9a-zA-Z]+$/;
+	if(numberletter.value.match(letters))
+	{
+	return true;
+	}
+	else
+	{
+	alert('alpha numeric fields must have alphanumeric characters only');
+	numberletter.focus();
+	return false;
+	}
+
+	}
+	function is_email(email)
+	{
+
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(email.value.match(mailformat))
+{
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+email.focus();
+return false;
+}
+}
+function validsex(umsex,ufsex)
+{
+x=0;
+
+if(umsex.checked) 
+{
+x++;
+} if(ufsex.checked)
+{
+x++; 
+}
+if(x==0)
+{
+alert('Select Male/Female');
+umsex.focus();
+return false;
+}
+else
+{
+return true;
+}
+}
+
+function validmstatus(single,married,unmarried)
+{
+x=0;
+if(single.radio){
+	x++;
+}
+if(married.radio)
+{
+	x++;
+}
+if(unmarried.radio)
+{
+	x++;
+}
+if(x==0)
+{
+alert('Select single,married,unmarried');
+single.focus();
+return false;
+}
+else
+{
+return true;
+}
+}
+
+}
+		function form_validation()
+			{
+				var im=document.registration.indianmission;
+				var ds=document.registration.desiredservice;
+				var surname=document.registration.surname;
+				var gname=document.registration.givenname;
+				var pname=document.registration.previousname;
+				var gender=document.registration.female;
+				var gender=document.registration.male;				
+				var dob=document.registration.dob;
+				var pob=document.registration.pob;
+				var country=document.registration.country;
+				var qual=document.registration.qualification;
+				var profession=document.registration.Profession;
+				var vmarks=document.registration.visibleMarks;
+				var height=document.registration.height;
+				var cofeyes=document.registration.colorofeyes;
+				var cofhair=document.registration.colorofeyes;
+				var addinpassposrt=document.registration.addressinpassport;
+				var oadd=document.registration.otheraddress;
+				var addtobefiiles=document.registration.address;
+				var phone=document.registration.phonenumber;
+				var mobile=document.registration.mobilenumber;
+				var email=document.registration.email;
+				var mstatus=document.registration.mstatus;
+				var sname=document.registration.sname;
+				var snationality=document.registartion.snationality;
+				var fname=document.registration.fname;
+				var fcountry=document.registration.fcountry;
+				var fnationality=document.registration.fnationality;
+				var mname=document.registration.mname;
+				var mcountry=document.registration.mcountry;
+				var mnationality=document.registration.mnationality;
+				var oldpnumber=document.registration.oldpnumber;
+				var idate=document.registration.idate;
+				var poi=document.registration.poi;
+				var fileno=document.registration.fileno; 
+				if(allLetters(surname))
+				{
+				if(select_mission(im))
+				{
+				if(select_service(ds))
+				{
+				
+				if(allLetter(givenname))
+				{
+				alert("fisrt section validated,go to next section");
+			}}}}
+				if(allLetter(previousname))
+				{
+					if(validsex(male,female))
+					{
+					if(select_date(dob))			
+				{
+					if(allLetter(pob))
+				{	
+				if(allLetter(country))
+				{
+				if(allLetter(qual))
+				{
+				if(allLetter(profession))
+				{
+				if(allLetter(vmarks))
+				{
+				if(allNumeric(height))
+				{
+				if(allLetter(cofeyes))
+				{
+				if(allLetter(cofhair))
+				{
+				if(isalphaNumeric(addressinpassport))
+				{
+				if(isalphaNumeric(otheraddress))
+				{
+				if(allNumeric(phonenumber))
+				{
+				if(allNumeric(mobilenumber))
+				{
+				if(is_email(email))
+				{
+					alert("second section validated,enter details for third section");
+				}}}}}}}}}}}}}}}}
+				if(validmstatus(single,married,unmarried))
+				{
+				if(allLetter(sname))
+				{
+				if(allLetter(snationality))
+				{
+				if(allLetter(fname))
+				{
+				if(allLetter(fcountry))
+				{	
+				if(allLetter(fnationality))	
+				{
+				if(allLetter(mname))
+				{
+				if(allLetter(mcountry))
+				{
+				if(allLetter(mnationality))
+				{
+				if(alphanumeric(oldpnumber))
+				{
+				if(select_date(idate))
+				{
+				if(allLetter(poi))
+				{
+				if(allNumeric(fileno))
+				{
+					alert("validated")
+				}
+				}
+				}
+				}
+	
+				}
+				}
+				}
+				}
+				}
+				}																			
+				}}}																				
+					return false;
+			
+			}
+		</script>
+
+
+		<h3 style="background: #9999ff;color:white; text-align: center;">Online passport registration at Indian Missions/Posts for NRIs</h3>
+		<form name="registration" onsubmit=" return(form_validation());" >
+		<table class="myclass" border =1 cellspacing="0px">
+			<tr><td colspan="4" style="color:red;"><b>Note: Columns marked with * are complusory to fill in</b></td></tr>
+			<tr><td class="fd" >Indian Mission<i id="id1"> *</i></td><td colspan="3" ><select   name="indianmission" >
+				<option >USA-SAN FRANCISCO</option>
+				<option>UK</option>
+				<option>AUSTRALIA</option>
+				<option>ENGLAND</option>
+				<option>DUBAI</option>
+			</select></td><tr>
+				<tr><td class="fd" >Service Desired<i id="id1">*</i></td>
+					<td colspan="3" ><select value="id1"  name="desiredservice" selected="selected">
+						<option value="id1">Select service</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td class="fd" ><label for="name">Surname</label></td>
+					<td colspan="3" ><input type="text" name="surname" size="30"/></td>
+				</tr>
+				<tr>
+					<td class="fd"  rowspan="2" style="padding-left: 30px;margin: 3px">Given Name/s<i id="id1">*</i></td>
+					<td colspan="3" ><textarea rows="1" cols="40" name="givenname"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="3" style="text-align:left;">(Name should be in full,Initilal and titles such as Mr,Mrs,Dr etc. are allowed)</td></tr>
+				<tr>
+					<td colspan="4" name="check1" style="color:red; padding-left: 10px"><b>If you have ever changed your name click on the box<input type="checkbox" name="checkbox"/>and indicate previous name(s) in full</b>
+					</td>
+				</tr>
+				<tr>
+					<td class="fd" >Previous Name</td><td colspan="3" ><textarea style="background: #66cccc;" rows="1" cols="30"  class="textarea" name="previousname"></textarea></td></tr>
+				<tr><td class="fd" >Sex<i id="id1">*</i></td><td><select>
+					<option name="male">male</option>
+					<option name="female">female</option></select></td><td class="fd">DoB<i id="id1">*</i></td><td><input type="date"/></td></tr>
+			<tr>
+				<td class="fd" >Place of Birth<i id="id1">*</i></td>
+				<td ><textarea rows="1" cols="30"  class="textarea" name="pob"></textarea></td>
+				<td class="fd" >District/country<i id="id1">*</i></td>
+				<td ><textarea cols="30" rows="1" name="country"></textarea></td>
+				
+			</tr>
+		<tr>
+				<td class="fd" >Qualification<i id="id1">*</i></td>
+				<td ><textarea rows="1" cols="30"  class="textarea" name="qualfication"></textarea></td>
+				<td class="fd" >Profession<i id="id1">*</i></td>
+				<td ><textarea cols="30" rows="1" name="profession"></textarea></td>
+			</tr>
+			<tr>
+				<td class="fd" >Visible Mark<i id="id1">*</i></td>
+				<td ><textarea  rows="1" cols="30"  class="textarea" name="visibleMarks"></textarea></td>
+				<td class="fd" >Height(cm)<i id="id1">*</i></td>
+				<td><input text="Number" name="height"/></td>
+			</tr>
+			<tr>
+				<td class="fd" >Color of Eyes<i id="id1">*</i></td>
+				<td><textarea rows="1" cols="30"  class="textarea" name="colorofeyes"></textarea></td>
+				<td class="fd" >Color of hair<i id="id1">*</i></td>
+				<td><textarea cols="30" rows="1" name="colorofhair"></textarea></td>
+			</tr>
+			<tr height="20px">
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td  rowspan="2" class="fd" >Address to be printed in passport<i id="id1">*</i></td>
+				<td height="40px"><textarea rows="1" cols="30"  class="textarea" name="addressinpassport"></textarea></td>
+				<td rowspan="1" class="fd" >Other address<i id="id1">*</i></td>
+				<td height="20px"><textarea cols="30" rows="1" name="otheraddress"></textarea></td>
+			</tr>
+			<tr>
+			</tr>
+			<tr>
+				<td rowspan="2" class="fd" height="40px">Atleast first two address lines have to be filled<i id="id1">*</i></td>
+				<td><textarea rows="1" cols="30"  class="textarea" height="20px"></textarea></td>
+				<td rowspan="2" height="40px" class="fd"></td>
+				<td><textarea cols="30" rows="1"></textarea></td>
+			</tr>
+			<tr>
+				<td  height="20px"><textarea rows="1" cols="30"></textarea></td>
+				<td height="20px"><textarea rows="1" cols="30"></textarea></td>
+			</tr>
+			<tr>
+				<td class="fd" >Phone Number<i id="id1">*</i></td>
+				<td><input type="Number" name="phonenumber"/></td>
+				<td class="fd" >Mobile Number<i id="id1">*</i></td>
+				<td><input type="Number" name="mobilenumber"/></td>
+			</tr>
+			<tr>
+				<td class="fd" >Email address<i id="id1">*</i></td>
+				<td><input type="Email" name="email"/></td>
+				<td class="fd"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="4" style="color:red;padding-left: 10px"><b>Applicants Family details(all names should be in full,initials,titles such as mr,Mrs,Drs etc. are not allowed) </b></td>
+			</tr>
+			<tr>
+			<td class="fd" >Marital status<i id="id1"> *</i></td><td colspan="3"><select value="id1" name="mstatus" selected="selected">
+				<option value="id1">Married</option>
+				<option>Single</option>
+				<option>Unmarried</option>
+				</select>
+			</td>
+			<tr>
+			<tr>
+			<td class="fd" >Spouse's Name</td>
+			<td colspan="3" ><textarea rows="1" cols="50" style="background: #66cccc;" name="sname"></textarea> </td>
+			</td>
+			<tr>
+			<td class="fd" >Spouse's Nationality</td>
+			<td colspan="3"><textarea rows="1" cols="50" style="background: #66cccc" name="snationality"></textarea> </td>
+			</tr>
+			<tr>
+			<td class="fd" >Father's Name<i id="id1"> *</i></td>
+			<td colspan="3"><textarea rows="1" cols="60" name="fname"></textarea> </td>
+			</tr>
+			<tr>
+			<td class="fd" >Father's Birth country</td>
+			<td colspan="3"><textarea rows="1" cols="60" name="fcountry"></textarea> </td>
+			</tr>
+			<tr>
+			<td class="fd" height="25px" >Father's Nationality at<br> the time of applicant's birth</td>
+			<td colspan="3"><textarea rows="1" cols="60" name="fnationality"></textarea> </td>
+			</tr>
+			<tr>
+			<td class="fd" height="25px" >Mother's Name<i id="id1"> *</i></td>
+			<td colspan="3"><textarea rows="1" cols="50" name="mname"></textarea> </td>
+			</tr>
+			<tr>
+			<td class="fd" >Mother's Birth country</td>
+			<td colspan="3"><textarea rows="1" cols="60" name="mcountry"></textarea> </td>
+			</tr>
+			
+			<tr>
+			<td class="fd" height="25px" >Mother's Nationality at<br> the time of applicant's birth</td>
+			<td colspan="3"><textarea rows="1" cols="60" name="mnationality"></textarea> </td>
+			</tr>
+			<tr>
+			<td colspan="4" height="25px"></td>
+			</tr>	
+			<tr>
+				<td colspan="4"  name="check2" style="color:red; padding-left: 10px"><b>If you have held a passport or hold a passport  click on this box<input type="checkbox" name="checkbox"/>and fill details below</b>
+				</td>
+				</tr>
+			<tr>
+				<td class="fd" >Old Existing passport Number</td>
+				<td><input type="Number" name="oldpnumber"/></td>
+				<td class="fd" >Issue date</td>
+				<td><input type="date" name="idate"/></td>
+			</tr>
+			<tr>
+				<td class="fd" >Place of Issue</td>
+				<td><input type="text" name="poi"/></td>
+				<td class="fd" >File Number</td>
+				<td><input type="Number" name="fileno"/></td>
+			</tr>
+			<tr><td colspan="4"><input type="submit"  class="myclass" style="width:60; margin-left: 700px"/></td></tr>
+		</table> 
+	</form>
+	</body>
+</html>
