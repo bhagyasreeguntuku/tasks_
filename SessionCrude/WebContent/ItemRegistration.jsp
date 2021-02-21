@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="post" action="./ItemConfirm.jsp">
+<form method="post" action="./ItemServlet">
 Enter Itemid:<input type="text" name="ItemId"/><br> 
 Enter Item name:<input type="text" name="ItemName"/><br> 
 Enter Item price:<input type="text" name="ItemPrice"/><br> 

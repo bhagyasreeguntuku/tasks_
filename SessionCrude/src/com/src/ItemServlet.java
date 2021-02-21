@@ -43,7 +43,7 @@ public class ItemServlet extends HttpServlet {
 				
 		
 		DbConnection db=new DbConnection();
-		String sql="insert into item values(?,?,?)";
+		String sql="insert into item values(?,?,?,?)";
 		PreparedStatement ps=db.getMyPreparedStatement(sql);
 		try {
 			ps.setString(1,user);
@@ -52,11 +52,10 @@ public class ItemServlet extends HttpServlet {
 			ps.setString(4,ItemPrice);
 			
 			int i=ps.executeUpdate();
-
-Cookie ck1=new Cookie("user","");
-ck1.setMaxAge(0);
-response.addCookie(ck1);	
 			
+			Cookie ck1=new Cookie("user","");
+			ck1.setMaxAge(0);
+			response.addCookie(ck1);
 			if(i>0)
 			{
 				response.sendRedirect("profile.jsp");
