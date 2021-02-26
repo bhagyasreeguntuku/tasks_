@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.src.model.Question" table="que200">
+	
+
+
+		<id name="queId" type="integer">
+			<column name="queId" />
+			<generator class="increment"></generator>
+		</id>
+		
+		
+
+		<property name="queValue" type="string">
+			<column name="queValue"/>
+		</property>
+		
+		<list name="answers" cascade="all" table="que200_ans200">
+		<key column="queId"></key>
+		<index column="type"/>
+		<many-to-many class="com.src.model.Answer" column="answerid"/>
+		</list>	
+	</class>
+	
+	
+	
+	
+	
+</hibernate-mapping>
+
