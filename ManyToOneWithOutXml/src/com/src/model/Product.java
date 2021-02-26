@@ -1,0 +1,75 @@
+package com.src.model;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="p4")
+public class Product {
+	
+	
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int productId;
+	private String productName;
+	private long productPrice;
+	
+	
+	@ManyToOne(targetEntity= Customer.class)
+	private Customer c;
+
+
+	public int getProductId() {
+		return productId;
+	}
+
+
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+
+
+	public String getProductName() {
+		return productName;
+	}
+
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+
+	public long getProductPrice() {
+		return productPrice;
+	}
+
+
+	public void setProductPrice(long productPrice) {
+		this.productPrice = productPrice;
+	}
+
+
+	public Customer getC() {
+		return c;
+	}
+
+
+	public void setC(Customer c) {
+		this.c = c;
+	}
+	
+	
+	
+	
+	
+	
+	
+}
